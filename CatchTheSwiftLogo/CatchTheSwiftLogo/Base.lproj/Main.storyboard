@@ -38,7 +38,39 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="swiftlogo" translatesAutoresizingMaskIntoConstraints="NO" id="noO-GJ-ifF">
-                                <rect key="frame" x="26" y="265" width="98" height="99"/>
+                                <rect key="frame" x="26" y="221" width="98" height="99"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="swiftlogo" translatesAutoresizingMaskIntoConstraints="NO" id="Y3d-Zq-9gZ">
+                                <rect key="frame" x="161" y="221" width="98" height="99"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="swiftlogo" translatesAutoresizingMaskIntoConstraints="NO" id="4dC-5j-FqL">
+                                <rect key="frame" x="296" y="221" width="98" height="99"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="swiftlogo" translatesAutoresizingMaskIntoConstraints="NO" id="oQy-46-CuI">
+                                <rect key="frame" x="26" y="370" width="98" height="99"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="swiftlogo" translatesAutoresizingMaskIntoConstraints="NO" id="39D-Gw-AUB">
+                                <rect key="frame" x="161" y="370" width="98" height="99"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="swiftlogo" translatesAutoresizingMaskIntoConstraints="NO" id="e8S-sM-6vZ">
+                                <rect key="frame" x="296" y="370" width="98" height="99"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="swiftlogo" translatesAutoresizingMaskIntoConstraints="NO" id="wf3-wF-AdB">
+                                <rect key="frame" x="26" y="530" width="98" height="99"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="swiftlogo" translatesAutoresizingMaskIntoConstraints="NO" id="IVO-Ha-IPd">
+                                <rect key="frame" x="161" y="530" width="98" height="99"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="swiftlogo" translatesAutoresizingMaskIntoConstraints="NO" id="bU6-mY-dg2">
+                                <rect key="frame" x="296" y="530" width="98" height="99"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -49,12 +81,20 @@
                         <outlet property="highScoreLabel" destination="Oge-7f-Ldn" id="VdY-y5-SdO"/>
                         <outlet property="scoreLabel" destination="GeW-EE-0jw" id="RzX-tg-9P8"/>
                         <outlet property="swiftImage" destination="noO-GJ-ifF" id="uPI-VU-c5d"/>
+                        <outlet property="swiftImage2" destination="Y3d-Zq-9gZ" id="WGm-XS-fxL"/>
+                        <outlet property="swiftImage3" destination="4dC-5j-FqL" id="vUl-uL-jZ4"/>
+                        <outlet property="swiftImage4" destination="oQy-46-CuI" id="OTK-sJ-kCS"/>
+                        <outlet property="swiftImage5" destination="39D-Gw-AUB" id="pKD-R6-f6M"/>
+                        <outlet property="swiftImage6" destination="e8S-sM-6vZ" id="vt0-lN-uSv"/>
+                        <outlet property="swiftImage7" destination="wf3-wF-AdB" id="Squ-Cg-GfX"/>
+                        <outlet property="swiftImage8" destination="IVO-Ha-IPd" id="yqw-t9-Hdt"/>
+                        <outlet property="swiftImage9" destination="bU6-mY-dg2" id="Q6u-Wh-phy"/>
                         <outlet property="timerLabel" destination="hyh-1z-fBy" id="6u2-4S-2uv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="18.840579710144929" y="93.75"/>
+            <point key="canvasLocation" x="-1013" y="-88"/>
         </scene>
     </scenes>
     <resources>
