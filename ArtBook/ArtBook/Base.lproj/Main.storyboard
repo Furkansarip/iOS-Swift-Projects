@@ -33,35 +33,12 @@
                     <navigationItem key="navigationItem" id="pAT-LI-Zh3"/>
                     <connections>
                         <outlet property="tableView" destination="vLT-bI-QhJ" id="jd8-fD-Sgx"/>
-                        <segue destination="fbR-Bi-M1f" kind="show" identifier="toDetailsVC" id="uZl-dL-dPP"/>
                         <segue destination="8jA-eK-qLd" kind="show" identifier="addItemPage" id="6bM-rw-aSb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="928.98550724637687" y="79.6875"/>
-        </scene>
-        <!--Details View Controller-->
-        <scene sceneID="LHs-cK-FHD">
-            <objects>
-                <viewController id="fbR-Bi-M1f" customClass="DetailsViewController" customModule="ArtBook" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="khN-tj-Thy">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fVa-oM-BAk">
-                                <rect key="frame" x="87" y="135" width="241" height="218"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="Iz8-jI-WtD"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="N5h-wF-8cz"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3WC-83-YZq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1697.1014492753625" y="79.6875"/>
         </scene>
         <!--Add Item View Controller-->
         <scene sceneID="4Yl-yO-b5v">
@@ -128,12 +105,13 @@
                         <outlet property="addImageView" destination="qiG-QG-t7n" id="5jL-vU-ng1"/>
                         <outlet property="artistField" destination="vjP-wh-8t8" id="Rhn-aj-ONE"/>
                         <outlet property="nameField" destination="ftr-D9-2a0" id="fZP-oa-BzD"/>
+                        <outlet property="saveButton" destination="P0p-hf-VWk" id="niH-uu-GTV"/>
                         <outlet property="yearField" destination="DRJ-Kb-Gu5" id="SxG-63-TOT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o0b-pS-MMF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1066.6666666666667" y="780.80357142857144"/>
+            <point key="canvasLocation" x="1733" y="80"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HOT-Uc-1UH">

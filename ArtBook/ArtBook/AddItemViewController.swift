@@ -13,7 +13,48 @@ class AddItemViewController: UIViewController,UIImagePickerControllerDelegate,UI
     @IBOutlet weak var artistField: UITextField!
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var yearField: UITextField!
+    @IBOutlet weak var saveButton: UIButton!
+    
+    var itemPaintings=""
+    var itemId : UUID?
     override func viewDidLoad() {
+        if itemPaintings != ""{
+            saveButton.isHidden=true
+            artistField
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let context = appDelegate.persistentContainer.viewContext
+            
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Paintings")
+            let stringId=itemId?.uuidString
+            fetchRequest.predicate=NSPredicate(format: "id = %@", stringId!)
+            do{
+                let results = try context.fetch(fetchRequest)
+                
+                for result in results as! [NSManagedObject]{
+                    if let name = result.value(forKey: "name") as? String{
+                        nameField.text=name
+                    }
+                    if let artist = result.value(forKey: "artist") as? String{
+                        artistField.text=artist
+                    }
+                    if let year = result.value(forKey: "year") as? Int{
+                        yearField.text = String(year)
+                    }
+                    if let imageData = result.value(forKey: "image") as? Data{
+                        let image=UIImage(data: imageData)
+                        addImageView.image=image
+                    }
+                    
+                }
+            }catch{
+                
+            }
+            fetchRequest.returnsObjectsAsFaults=false
+        }else {
+            saveButton.isHidden=false
+            saveButton.isEnabled=false
+        }
+        
         super.viewDidLoad()
         
         
@@ -41,13 +82,15 @@ class AddItemViewController: UIViewController,UIImagePickerControllerDelegate,UI
         let data = addImageView.image?.jpegData(compressionQuality: 0.5)
         newPainting.setValue(data, forKey: "image")
         do{
+            
             try context.save()
             print("başarılı")
             
         }catch{
             print("Hata")
         }
-        
+        NotificationCenter.default.post(name: NSNotification.Name("newData"), object: nil)
+        self.navigationController?.popViewController(animated: true)
         
         
     }
@@ -67,6 +110,7 @@ class AddItemViewController: UIViewController,UIImagePickerControllerDelegate,UI
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         addImageView.image = info[.originalImage] as? UIImage
+        saveButton.isEnabled=true
         self.dismiss(animated: true, completion: nil)
     }
     /*
