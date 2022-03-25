@@ -1,7 +1,5 @@
 //
 //  DetailsViewController.swift
-//  SimpsonBook
-//
 //  Created by Furkan Sarı on 22.03.2022.
 //
 
