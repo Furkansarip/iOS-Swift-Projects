@@ -1,6 +1,12 @@
 
 # Catch The Swift Logo Game
-<p>I've learned arc4random, userDefaults, Timer, UIAlert & UITapGesture </p>
+<p>I've learned arc4random, userDefaults, Timer, UIAlert & UITapGesture 
+
+I've 9 hidden swiftlogo images in array and i use arc4random functions for randomly image isHidden=false 
+UserDefaults -> Saved Highscore
+UIAlert-> Quit or Replay
+UITapGesture-> Image Clicked actions
+</p>
 
 
 ## Screenshots
