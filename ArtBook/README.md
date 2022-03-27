@@ -4,8 +4,7 @@
 
 
 ## Screenshots
-<img src="https://github.com/Furkansarip/iOS-Swift-Projects/blob/main/ArtBook/Screenshots/main.png" width=200/>
-<img src="https://github.com/Furkansarip/iOS-Swift-Projects/blob/main/ArtBook/Screenshots/addScreen.png" width=200/>
+<img src="https://github.com/Furkansarip/iOS-Swift-Projects/blob/main/ArtBook/Screenshots/main.png" width=200/><img src="https://github.com/Furkansarip/iOS-Swift-Projects/blob/main/ArtBook/Screenshots/addScreen.png" width=200/>
 <img src="https://github.com/Furkansarip/iOS-Swift-Projects/blob/main/ArtBook/Screenshots/editScreen.png" width=200/>
 
 
