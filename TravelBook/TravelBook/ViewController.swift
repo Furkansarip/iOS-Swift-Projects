@@ -112,10 +112,18 @@ class ViewController: UIViewController,MKMapViewDelegate,CLLocationManagerDelega
             return nil
         }
         var reuseId="myAnnotation"
-        var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId)
+        var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as? MKPinAnnotationView
         if pinView == nil{
-            return pinView
+            pinView=MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+            pinView?.canShowCallout = true
+            
+            let button = UIButton(type: UIButton.ButtonType.detailDisclosure)
+            pinView?.rightCalloutAccessoryView = button
         }
+        else{
+            pinView?.annotation = annotation
+        }
+        return pinView
     }
 
     @IBAction func saveButton(_ sender: Any) {
