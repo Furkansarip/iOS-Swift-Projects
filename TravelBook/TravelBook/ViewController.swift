@@ -22,6 +22,7 @@ class ViewController: UIViewController,MKMapViewDelegate,CLLocationManagerDelega
     var choosenId : UUID?
     var annotationLatitude = Double()
     var annotationLongitude = Double()
+    var annotationTitle = ""
     override func viewDidLoad() {
         super.viewDidLoad()
        
@@ -48,6 +49,7 @@ class ViewController: UIViewController,MKMapViewDelegate,CLLocationManagerDelega
                 for result in results as! [NSManagedObject]{
                     if let place = result.value(forKey: "title") as? String{
                         placeName.text = place
+                        annotationTitle = place
                     }
                     if let id = result.value(forKey: "id") as? UUID{
                         print(id)
@@ -124,6 +126,29 @@ class ViewController: UIViewController,MKMapViewDelegate,CLLocationManagerDelega
             pinView?.annotation = annotation
         }
         return pinView
+    }
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        if choosenTitle != "" {
+                    
+                    let requestLocation = CLLocation(latitude: annotationLatitude, longitude: annotationLongitude)
+                    
+                    
+                    CLGeocoder().reverseGeocodeLocation(requestLocation) { (placemarks, error) in
+                        //closure
+                        
+                        if let placemark = placemarks {
+                            if placemark.count > 0 {
+                                              
+                                let newPlacemark = MKPlacemark(placemark: placemark[0])
+                                let item = MKMapItem(placemark: newPlacemark)
+                                item.name = self.annotationTitle
+                                let launchOptions = [MKLaunchOptionsDirectionsModeKey:MKLaunchOptionsDirectionsModeDriving]
+                                item.openInMaps(launchOptions: launchOptions)
+                                              
+                        }
+                    }
+                }
+    }
     }
 
     @IBAction func saveButton(_ sender: Any) {
