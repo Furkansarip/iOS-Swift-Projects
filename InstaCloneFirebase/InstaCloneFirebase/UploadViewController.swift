@@ -6,15 +6,56 @@
 //
 
 import UIKit
+import Firebase
 
-class UploadViewController: UIViewController {
+class UploadViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
 
+    @IBOutlet weak var addImageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
+        addImageView.isUserInteractionEnabled=true
+        let recognizer = UITapGestureRecognizer(target: self, action: #selector(uploadImage))
+        addImageView.addGestureRecognizer(recognizer)
+        
     }
     
+    @IBAction func uploadButton(_ sender: Any) {
+        
+        let storage = Storage.storage()
+        let storangeRef = storage.reference()
+        
+        let mediaFolder = storangeRef.child("media")
+        
+        if let data = addImageView.image?.jpegData(compressionQuality: 0.5){
+        let imageRef = mediaFolder.child("image.jpg")
+            imageRef.putData(data, metadata: nil) { metadata, error in
+                if error != nil {
+                    print(error?.localizedDescription)
+                }else{
+                    imageRef.downloadURL { url, error in
+                        let imageUrl = url?.absoluteString
+                        print(imageUrl)
+                    }
+                }
+            }
+            
+        }
+    }
+    @objc func uploadImage() {
+        let picker = UIImagePickerController()
+        picker.sourceType = .photoLibrary
+        picker.delegate = self
+        picker.allowsEditing = true
+        present(picker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+            addImageView.image = info[.originalImage] as? UIImage
+            
+            self.dismiss(animated: true, completion: nil)
+        }
 
     /*
     // MARK: - Navigation
