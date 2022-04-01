@@ -38,7 +38,22 @@ class ViewController: UIViewController {
     }
     
     @IBAction func signIn(_ sender: Any) {
-        performSegue(withIdentifier: "toFeedVC", sender: nil)
+        if mail.text != "" && password.text != "" {
+            Auth.auth().signIn(withEmail: mail.text!, password: password.text!) { newLogin, error in
+                if error != nil {
+                    self.makeAlert(title: "Error", message: error?.localizedDescription ?? "Error")
+                }
+                else {
+                    self.performSegue(withIdentifier: "toFeedVC", sender: nil)
+                }
+                
+                }
+        }
+        else {
+            makeAlert(title: "Error", message: "Username/Password Empty")
+
+            
+        }
     }
     func makeAlert(title:String, message:String){
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
