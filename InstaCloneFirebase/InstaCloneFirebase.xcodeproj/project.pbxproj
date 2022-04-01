@@ -14,7 +14,7 @@
 		740BC12927F70B3E0060B2D1 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740BC12827F70B3E0060B2D1 /* FeedViewController.swift */; };
 		740BC12B27F70B4E0060B2D1 /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740BC12A27F70B4E0060B2D1 /* UploadViewController.swift */; };
 		740BC12D27F70B590060B2D1 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740BC12C27F70B590060B2D1 /* SettingsViewController.swift */; };
-		7431F83127F72AE20007B807 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7431F83027F72AE20007B807 /* GoogleService-Info.plist */; };
+		7431F83527F7305A0007B807 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7431F83427F7305A0007B807 /* GoogleService-Info.plist */; };
 		74AF3B2E27F7020800B43D8D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AF3B2D27F7020800B43D8D /* AppDelegate.swift */; };
 		74AF3B3027F7020800B43D8D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AF3B2F27F7020800B43D8D /* SceneDelegate.swift */; };
 		74AF3B3227F7020800B43D8D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AF3B3127F7020800B43D8D /* ViewController.swift */; };
@@ -27,7 +27,7 @@
 		740BC12827F70B3E0060B2D1 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		740BC12A27F70B4E0060B2D1 /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 		740BC12C27F70B590060B2D1 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		7431F83027F72AE20007B807 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7431F83427F7305A0007B807 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		74AF3B2A27F7020800B43D8D /* InstaCloneFirebase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaCloneFirebase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74AF3B2D27F7020800B43D8D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74AF3B2F27F7020800B43D8D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,7 +80,7 @@
 				740BC12A27F70B4E0060B2D1 /* UploadViewController.swift */,
 				740BC12C27F70B590060B2D1 /* SettingsViewController.swift */,
 				74AF3B3627F7020900B43D8D /* Assets.xcassets */,
-				7431F83027F72AE20007B807 /* GoogleService-Info.plist */,
+				7431F83427F7305A0007B807 /* GoogleService-Info.plist */,
 				74AF3B3827F7020900B43D8D /* LaunchScreen.storyboard */,
 				74AF3B3B27F7020900B43D8D /* Info.plist */,
 			);
@@ -155,7 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				74AF3B3A27F7020900B43D8D /* LaunchScreen.storyboard in Resources */,
-				7431F83127F72AE20007B807 /* GoogleService-Info.plist in Resources */,
+				7431F83527F7305A0007B807 /* GoogleService-Info.plist in Resources */,
 				74AF3B3727F7020900B43D8D /* Assets.xcassets in Resources */,
 				74AF3B3527F7020800B43D8D /* Main.storyboard in Resources */,
 			);
