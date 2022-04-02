@@ -11,6 +11,7 @@ import Firebase
 class UploadViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
 
     @IBOutlet weak var addImageView: UIImageView!
+    @IBOutlet weak var postText: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,14 +23,15 @@ class UploadViewController: UIViewController,UIImagePickerControllerDelegate,UIN
     }
     
     @IBAction func uploadButton(_ sender: Any) {
-        
+        let imageId = UUID().uuidString
         let storage = Storage.storage()
         let storangeRef = storage.reference()
         
         let mediaFolder = storangeRef.child("media")
         
+        
         if let data = addImageView.image?.jpegData(compressionQuality: 0.5){
-        let imageRef = mediaFolder.child("image.jpg")
+        let imageRef = mediaFolder.child(imageId)
             imageRef.putData(data, metadata: nil) { metadata, error in
                 if error != nil {
                     print(error?.localizedDescription)
@@ -37,6 +39,21 @@ class UploadViewController: UIViewController,UIImagePickerControllerDelegate,UIN
                     imageRef.downloadURL { url, error in
                         let imageUrl = url?.absoluteString
                         print(imageUrl)
+                        
+                        //Database
+                        let firestoreDatabase = Firestore.firestore()
+                        var firestoreRef : DocumentReference? = nil
+                        let Posts = ["imageUrl":imageUrl,"postedBy":Auth.auth().currentUser?.email,"postComment":self.postText.text,"date":FieldValue.serverTimestamp(),"likes":0] as! [String:Any]
+                        firestoreRef = firestoreDatabase.collection("Posts").addDocument(data: Posts, completion: { error in
+                            if error != nil{
+                                self.makeAlert(title: "Post Error", message: "We have a Problem!")
+                            }
+                            else {
+                                self.addImageView.image = UIImage(systemName: "camera.circle.fill")
+                                self.postText.text = ""
+                                self.tabBarController?.selectedIndex = 0
+                            }
+                        })
                     }
                 }
             }
@@ -56,6 +73,13 @@ class UploadViewController: UIViewController,UIImagePickerControllerDelegate,UIN
             
             self.dismiss(animated: true, completion: nil)
         }
+    func makeAlert(title:String, message:String){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
+        alert.addAction(okButton)
+        self.present(alert, animated: true, completion: nil)
+        
+    }
 
     /*
     // MARK: - Navigation

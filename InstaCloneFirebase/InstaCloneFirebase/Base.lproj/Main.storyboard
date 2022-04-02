@@ -110,6 +110,7 @@
                     <tabBarItem key="tabBarItem" title="Upload" image="u.circle.fill" catalog="system" id="g8s-wg-ZaY"/>
                     <connections>
                         <outlet property="addImageView" destination="iSN-MA-a1H" id="rzC-o6-Gh2"/>
+                        <outlet property="postText" destination="ZuG-mS-i8Y" id="BkS-Wh-MtN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TWb-2k-OdZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
