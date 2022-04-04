@@ -6,9 +6,11 @@
 //
 
 import UIKit
-
+import Firebase
 class FeedCell: UITableViewCell {
+    
 
+    @IBOutlet weak var documentIDLabel: UILabel!
     @IBOutlet weak var postImage: UIImageView!
     @IBOutlet weak var postMailText: UILabel!
     @IBOutlet weak var commentText: UILabel!
@@ -25,5 +27,13 @@ class FeedCell: UITableViewCell {
     }
 
     @IBAction func likeButton(_ sender: Any) {
+        let firebaseDatabase = Firestore.firestore()
+        if let likeCount = Int(likeCountText.text!){
+            let likeUpdate = ["likes": likeCount + 1] as [String:Any]
+            firebaseDatabase.collection("Posts").document(documentIDLabel.text!).setData(likeUpdate, merge: true)
+        }
+        
+        
     }
+   
 }

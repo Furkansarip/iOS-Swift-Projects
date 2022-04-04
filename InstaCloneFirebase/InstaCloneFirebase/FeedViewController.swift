@@ -14,6 +14,7 @@ class FeedViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     var comments = [String]()
     var likes = [Int]()
     var images = [String]()
+    var documentIDs = [String]()
     
     @IBOutlet weak var feedTableView: UITableView!
     override func viewDidLoad() {
@@ -40,6 +41,8 @@ class FeedViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
                     self.images.removeAll(keepingCapacity: false)
                     
                     for document in postData!.documents{
+                        let documentID = document.documentID
+                        self.documentIDs.append(documentID)
                         if let mail = document.get("postedBy") as? String{
                             self.mails.append(mail)
                             
@@ -75,6 +78,7 @@ class FeedViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         cell.commentText.text = comments[indexPath.row]
         cell.likeCountText.text = String(likes[indexPath.row])
         cell.postImage.sd_setImage(with: URL(string: self.images[indexPath.row]))
+        cell.documentIDLabel.text = documentIDs[indexPath.row]
         
         return cell
     }
